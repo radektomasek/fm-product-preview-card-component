@@ -1,0 +1,27 @@
+/* Basic style settings (CSS Properties) + resets */
+:root {
+    --dark-cyan-color: hsl(158, 36%, 37%);
+    --cream-color: hsl(30, 38%, 92%);
+    --very-dark-blue-color: hsl(212, 21%, 14%);
+    --dark-grayish-blue-color: hsl(228, 12%, 48%)
+    --white-color: hsl(0, 0%, 100%);   
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+a,
+p {
+    margin: 0;
+    padding: 0;   
+}
+

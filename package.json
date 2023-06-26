@@ -1,0 +1,28 @@
+{
+  "name": "fm-product-preview-card-component",
+  "version": "1.0.0",
+  "description": "This is a solution of one the Frontend Mentor challenges - https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa, built with Vanilla CSS",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radektomasek/fm-product-preview-card-component.git"
+  },
+  "keywords": [
+    "Parcel",
+    "HTML",
+    "CSS"
+  ],
+  "author": "Radek Tomasek (radek.tomasek@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/radektomasek/fm-product-preview-card-component/issues"
+  },
+  "homepage": "https://github.com/radektomasek/fm-product-preview-card-component#readme",
+  "devDependencies": {
+    "parcel": "^2.9.2"
+  }
+}
