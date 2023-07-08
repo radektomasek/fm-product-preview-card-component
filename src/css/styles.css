@@ -26,3 +26,12 @@ p {
     padding: 0;   
 }
 
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
