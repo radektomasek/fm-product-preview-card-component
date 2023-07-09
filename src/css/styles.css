@@ -5,6 +5,12 @@
     --very-dark-blue-color: hsl(212, 21%, 14%);
     --dark-grayish-blue-color: hsl(228, 12%, 48%);
     --white-color: hsl(0, 0%, 100%);
+
+    --card-width: 21.4375rem;
+    --card-height: 38.1875rem;
+
+    --image-width: var(--card-width);
+    --image-height: 15rem;
 }
 
 html {
@@ -33,5 +39,26 @@ body {
 .card {
     display: flex;
     flex-flow: column nowrap;
+    width: var(--card-width);
+    height: var(--card-height);
+}
+
+/* image - the first element of the grid */
+.card__asset {
+    flex-basis: var(--image-height);
+    background: url('../../assets/image-product-mobile.jpg') no-repeat center left/contain;
+}
+
+/* standard content */
+.card__content {
+    flex-basis: calc(var(--card-height) - var(--image-height));
+}
+
+/* Desktop breakpoint */
+@media screen and (min-width: 90em) {
+    :root {
+        --card-width: 37.5rem;
+        --card-height: 28.125rem;
+    }
 }
 
