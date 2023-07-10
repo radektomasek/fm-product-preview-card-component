@@ -11,6 +11,9 @@
 
     --image-width: var(--card-width);
     --image-height: 15rem;
+
+    --button-width: 18.4375rem;
+    --button-height: 3rem;
 }
 
 html {
@@ -26,6 +29,7 @@ html {
 body,
 h1,
 h2,
+h3,
 a,
 p {
     margin: 0;
@@ -46,12 +50,82 @@ body {
 /* image - the first element of the grid */
 .card__asset {
     flex-basis: var(--image-height);
-    background: url('../../assets/image-product-mobile.jpg') no-repeat center left/contain;
+    background: url('../../assets/image-product-mobile.jpg') no-repeat top left/contain;
 }
 
 /* standard content */
 .card__content {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 2rem;
     flex-basis: calc(var(--card-height) - var(--image-height));
+}
+
+.card__title,
+.card__price--discounted {
+    font-family: 'Fraunces', serif;
+}
+
+.card__category {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.3125rem;
+    color: var(--dark-grayish-blue-color);
+    flex-basis: 2.1875rem;
+}
+
+.card__title {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2rem;
+    color: var(--very-dark-blue-color);
+    flex-basis: 7.5rem;
+}
+
+.card__description {
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.4375rem;
+    color: var(--dark-grayish-blue-color);
+    flex-basis: 7.56rem;
+}
+
+.card__price {
+    display: flex;
+    align-items: center;
+    flex-basis: 3.88rem;
+}
+
+.card__price--discounted {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: var(--dark-cyan-color);
+}
+
+.card__price--original {
+    color: var(--dark-grayish-blue-color);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.4375rem;
+    text-decoration-line: line-through;
+}
+
+.card__button {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    width: var(--button-width);
+    height: var(--button-height);
+    color: var(--white-color);
+    background: var(--dark-cyan-color);
+    border: 0.1rem solid var(--dark-cyan-color); 
 }
 
 /* Desktop breakpoint */
@@ -59,6 +133,19 @@ body {
     :root {
         --card-width: 37.5rem;
         --card-height: 28.125rem;
+
+        --image-width: calc(var(--card-width) / 2);
+
+        --button-width: 14.75rem;
+    }
+
+    .card {
+        flex-flow: row nowrap;
+    }
+
+    .card__asset {
+        flex-basis: var(--image-width);
+        background: url('../../assets/image-product-desktop.jpg') no-repeat top left/cover;
     }
 }
 
