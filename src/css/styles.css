@@ -9,11 +9,31 @@
     --card-width: 21.4375rem;
     --card-height: 38.1875rem;
 
+    --card-category-basis: 2.1875rem;
+    --card-title-basis: 7.5rem;
+    --card-price-basis: 5.62rem;
+    --button-margin-top: 0.07rem;
+
+    --category-text-size: 0.75rem;
+    --category-letter-spacing: 0.3125rem;
+
+    --small-text-size: 0.8125rem;
+    --small-line-height: 1.77; 
+
+    --large-text-size: 2rem;
+    --large-line-height: 1;
+
+    --standard-text-size: 0.875rem;
+    --standard-line-height: 1.64;
+
     --image-width: var(--card-width);
     --image-height: 15rem;
 
+    --price-list-space: 1.19rem;
+
     --button-width: 18.4375rem;
     --button-height: 3rem;
+    --button-border-radius: 0.5rem;
 }
 
 html {
@@ -38,6 +58,7 @@ p {
 
 body {
     font-family: 'Montserrat', sans-serif;
+    background: var(--cream-color);
 }
 
 .card {
@@ -59,6 +80,7 @@ body {
     flex-flow: column nowrap;
     padding: 2rem;
     flex-basis: calc(var(--card-height) - var(--image-height));
+    background: var(--white-color);
 }
 
 .card__title,
@@ -67,65 +89,74 @@ body {
 }
 
 .card__category {
-    text-transform: uppercase;
-    font-size: 0.75rem;
     font-weight: 500;
-    letter-spacing: 0.3125rem;
+    text-transform: uppercase;
+    font-size: var(--category-text-size);
+    letter-spacing: var(--category-letter-spacing);
     color: var(--dark-grayish-blue-color);
-    flex-basis: 2.1875rem;
+    flex-basis: var(--card-category-basis);
 }
 
 .card__title {
     font-weight: 700;
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: var(--large-text-size);
+    line-height: var(--large-line-height);
     color: var(--very-dark-blue-color);
-    flex-basis: 7.5rem;
+    flex-basis: var(--card-title-basis);
 }
 
 .card__description {
     font-weight: 500;
-    font-size: 0.875rem;
-    line-height: 1.4375rem;
+    font-size: var(--standard-text-size);
+    line-height: var(--standard-line-height);
     color: var(--dark-grayish-blue-color);
-    flex-basis: 7.56rem;
 }
 
 .card__price {
     display: flex;
     align-items: center;
-    flex-basis: 3.88rem;
+    flex-basis: var(--card-price-basis);
+    gap: var(--price-list-space);
 }
 
 .card__price--discounted {
-    font-size: 2rem;
-    line-height: 2rem;
     font-weight: 700;
+    font-size: var(--large-text-size);
+    line-height: var(--large-line-height);
     color: var(--dark-cyan-color);
 }
 
 .card__price--original {
-    color: var(--dark-grayish-blue-color);
-    font-size: 0.8125rem;
     font-weight: 500;
-    line-height: 1.4375rem;
+    color: var(--dark-grayish-blue-color);
+    font-size: var(--small-text-size);
+    line-height: var(--small-line-height);
     text-decoration-line: line-through;
 }
 
 .card__button {
+    font-weight: 700;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     font-family: inherit;
-    border-radius: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 700;
+    margin-top: var(--button-margin-top);
+    border-radius: var(--button-border-radius);
+    font-size: var(--standard-text-size);
     width: var(--button-width);
     height: var(--button-height);
     color: var(--white-color);
     background: var(--dark-cyan-color);
-    border: 0.1rem solid var(--dark-cyan-color); 
+    border: 0.1rem solid var(--dark-cyan-color);
+    gap: var(--standard-text-size);
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Desktop breakpoint */
