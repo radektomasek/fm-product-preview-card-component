@@ -4,15 +4,18 @@
     --cream-color: hsl(30, 38%, 92%);
     --very-dark-blue-color: hsl(212, 21%, 14%);
     --dark-grayish-blue-color: hsl(228, 12%, 48%);
+    --deep-aquamarine-color: hsl(157, 43%, 18%);
     --white-color: hsl(0, 0%, 100%);
 
     --card-width: 21.4375rem;
     --card-height: 38.1875rem;
 
-    --card-category-basis: 2.1875rem;
-    --card-title-basis: 7.5rem;
-    --card-price-basis: 5.62rem;
-    --button-margin-top: 0.07rem;
+    --card-content-space: 1.5rem;
+    --card-border-radius: 0.625rem;
+
+    --card-category-basis: 1.6875rem;
+    --card-title-basis: 5rem;
+    --card-description-basis: 7.25rem;
 
     --category-text-size: 0.75rem;
     --category-letter-spacing: 0.3125rem;
@@ -34,6 +37,7 @@
     --button-width: 18.4375rem;
     --button-height: 3rem;
     --button-border-radius: 0.5rem;
+    --button-margin-top: 1.25rem;
 }
 
 html {
@@ -61,6 +65,14 @@ body {
     background: var(--cream-color);
 }
 
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .card {
     display: flex;
     flex-flow: column nowrap;
@@ -68,9 +80,30 @@ body {
     height: var(--card-height);
 }
 
+.attribution {
+    text-align: center;
+    color: var(--dark-grayish-blue-color);
+}
+
+.attribution h1 {
+    color: var(--dark-cyan-color);
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+}
+
+.attribution a {
+    color: var(--very-dark-blue-color);
+    text-decoration: none;
+}
+
+.attribution a:hover {
+    text-decoration: underline;
+}
+
 /* image - the first element of the grid */
 .card__asset {
     flex-basis: var(--image-height);
+    border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
     background: url('../../assets/image-product-mobile.jpg') no-repeat top left/contain;
 }
 
@@ -78,9 +111,10 @@ body {
 .card__content {
     display: flex;
     flex-flow: column nowrap;
-    padding: 2rem;
+    padding: var(--card-content-space);
     flex-basis: calc(var(--card-height) - var(--image-height));
     background: var(--white-color);
+    border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);
 }
 
 .card__title,
@@ -110,6 +144,7 @@ body {
     font-size: var(--standard-text-size);
     line-height: var(--standard-line-height);
     color: var(--dark-grayish-blue-color);
+    flex-basis: var(--card-description-basis);
 }
 
 .card__price {
@@ -152,11 +187,9 @@ body {
     gap: var(--standard-text-size);
 }
 
-.centered {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.card__button:hover {
+    cursor: pointer;
+    background: var(--deep-aquamarine-color);
 }
 
 /* Desktop breakpoint */
@@ -165,9 +198,17 @@ body {
         --card-width: 37.5rem;
         --card-height: 28.125rem;
 
+        --card-content-space: 2rem;
+
+        --card-category-basis: 2.1875rem;
+        --card-title-basis: 7.5rem;
+        --card-description-basis: 7.56rem;
+
         --image-width: calc(var(--card-width) / 2);
 
         --button-width: 14.75rem;
+
+        --button-margin-top: 1.88rem;
     }
 
     .card {
@@ -176,7 +217,12 @@ body {
 
     .card__asset {
         flex-basis: var(--image-width);
+        border-radius: var(--card-border-radius) 0 0 var(--card-border-radius);
         background: url('../../assets/image-product-desktop.jpg') no-repeat top left/cover;
+    }
+
+    .card__content {
+        border-radius: 0 var(--card-border-radius) var(--card-border-radius) 0;
     }
 }
 
