@@ -41,6 +41,8 @@ I picked up this implementation as a quick test of the [new developer mode in Fi
 
 I experimented a bit with responsive images, but realized this challenge might not be the best use-case for them and defaulted the solution to the standard background images. 
 
+Based on some feedback I received in my previous challenge, **I put an empty description to the svg** as the one used in this project is just for decorative purpose.
+
 ### Built with
 
 - Semantic HTML5 markup
